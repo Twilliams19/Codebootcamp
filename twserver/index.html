@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>First Git Project</title>
+</head>
+
+<body>
+    <h1>Code Boot Camp @ theClubhouse Starter</h1>
+    <a href="/about">&rarr; To About page</a>
+    <script>
+        // Pulled From 
+        // https://davidwalsh.name/query-string-javascript
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+        // Set the cookie to the session
+        var userName = getUrlParameter("userName")
+        document.cookie = ("userName=" + userName);
+        if(location.search) {
+            alert(document.cookie);
+        }
+    </script>
+</body>
+
+</html>
